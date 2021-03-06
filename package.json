@@ -1,0 +1,19 @@
+{
+  "name": "ip_assessment",
+  "version": "1.0.0",
+  "description": "Fishtech assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/16qeddy/IP_Assessment.git"
+  },
+  "author": "Charles Eddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/16qeddy/IP_Assessment/issues"
+  },
+  "homepage": "https://github.com/16qeddy/IP_Assessment#readme"
+}
