@@ -1,0 +1,1 @@
+//todo: create helper function for mapping data to classes
