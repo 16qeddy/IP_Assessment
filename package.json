@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/16qeddy/IP_Assessment#readme",
   "dependencies": {
+    "curl": "^0.1.4",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.7",
