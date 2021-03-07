@@ -12,9 +12,9 @@ export class DomainData {
 //maintains org, email and telephone. used as super for admin and technical contact classes
 export class Contact {
   constructor(organization, email, telephone){
-    this.organization = organization;
-    this.email = email;
-    this.telephone = telephone;
+    this.organization = organization || 'N/A';
+    this.email = email || 'N/A';
+    this.telephone = telephone || 'N/A';
   }
 }
 
@@ -35,12 +35,12 @@ export class TechnicalContact extends Contact {
 //maintains registry data to be used in IpData class
 export class RegistryData {
   constructor(dataObject){
-    this.organization = dataObject.organization;
-    this.street = dataObject.street1;
-    this.city = dataObject.city;
-    this.state = dataObject.state;
-    this.postalCode = dataObject.postalCode;
-    this.country = dataObject.country;
-    this.countryCode = dataObject.countryCode;
+    this.organization = dataObject.organization || 'N/A';
+    this.street = dataObject.street1 || 'N/A';
+    this.city = dataObject.city || 'N/A';
+    this.state = dataObject.state || 'N/A';
+    this.postalCode = dataObject.postalCode || 'N/A';
+    this.country = dataObject.country || 'N/A';
+    this.countryCode = dataObject.countryCode || 'N/A';
   }
 }

@@ -6,8 +6,8 @@ export default function DataView(props) {
   return (
     <div className="dataViewContainer">
       <div className="navBar">
-        <input className="searchBar" onKeyPress={props.searchBarOnKeyPress} placeholder="Domain name, IP address, Email address"></input>
-        <button onclick={props.submitBtnOnClick} className="submitBtn">Search</button>
+        <input className="searchBar" onChange={props.searchBarOnChange} placeholder="Domain name, IP address, Email address"></input>
+        <button onClick={props.submitBtnOnClick} className="submitBtn">Search</button>
       </div>
       <h3>{`Domain Name: ${props.domainData.domainName}` || 'Domain Name: <domainName here>'}</h3>
       <div className="regDataContainer">

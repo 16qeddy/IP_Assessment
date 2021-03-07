@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getIpData from '../helperFunctions/getIpData.js';
+import mapDomainData from '../helperFunctions/mapDomainData.js';
 import DataView from './dataView.js'
 
 export default class App extends Component {
@@ -8,17 +8,31 @@ export default class App extends Component {
     this.state = {
        domainData: null,
        query: '136.34.193.116',
-       error: false
+       error: false,
     };
     this.searchForDomain = this.searchForDomain.bind(this);
+    this.searchBarOnChange = this.searchBarOnChange.bind(this);
+    this.submitBtnOnClick = this.submitBtnOnClick.bind(this);
   }
+
   componentDidMount(){
+    this.searchForDomain();
+  }
+
+  //updates the states query string as you type in the searchbar. TODO: add search on enter
+  searchBarOnChange(e){
+    this.setState({
+      query: e.target.value
+    })
+  }
+
+  submitBtnOnClick(){
     this.searchForDomain();
   }
 
   //searches for domain data with query and updates state with the new data
   async searchForDomain (){
-    var data = await getIpData(this.state.query);
+    var data = await mapDomainData(this.state.query);
     if(data === null){
       this.setState({error: true})
     } else{
@@ -35,7 +49,7 @@ export default class App extends Component {
     }
     return (
       <div className="appContainer">
-        <DataView domainData={this.state.domainData}/>
+        <DataView domainData={this.state.domainData} searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick}/>
       </div>
     )
   }
