@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/16qeddy/IP_Assessment#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
     "curl": "^0.1.4",
     "dotenv": "^8.2.0",
