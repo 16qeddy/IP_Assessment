@@ -18,6 +18,7 @@ deploy:
   region: "us-east-2"
   app: "ip_assessment"
   env: "ipassessment-env"
+    - API_KEY=$API_KEY
   bucket_name: "theholygoatz"
   on:
     branch: CI/CD
