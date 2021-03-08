@@ -7,15 +7,13 @@ services:
 before_install:
   - docker build -f Dockerfile -t 16qeddy/ip_assessment .
 
-env:
-  - API_KEY=$API_KEY
-
 script:
   - docker run -d -p 80:3000 16qeddy/ip_assessment
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
+  API_KEY: $API_KEY
   access_key_id: $ACCESS_KEY
   secret_access_key: $SECRET_ACCESS_KEY
   region: "us-east-2"
