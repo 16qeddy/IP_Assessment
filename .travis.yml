@@ -8,7 +8,7 @@ before_install:
   - docker build -f Dockerfile -t 16qeddy/ip_assessment .
 
 script:
-  - docker run -d -p 3000:3000 16qeddy/ip_assessment
+  - docker run -d -p 80:3000 16qeddy/ip_assessment
 
 deploy:
   skip_cleanup: true
