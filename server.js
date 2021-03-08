@@ -14,7 +14,6 @@ app.use('/', express.static(path.join(__dirname, 'dist')));
 //takes in a domain and requests data from WHOISAPI and returns the response in a JSON format
 //domain param can be one of the following: domain, IPv4, IPv6, or email
 app.get('/getdata/:domain', (req, res) =>{
-  console.log(process.env.$API_KEY)
   let url = `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=${process.env.$API_KEY}&domainName=${req.params.domain}&outputFormat=JSON`
   axios.get(url)
   .then((data)=>{
@@ -22,7 +21,7 @@ app.get('/getdata/:domain', (req, res) =>{
   })
   .catch(err =>{
     console.log(err);
-    res.send('there was an error');
+    res.send(`there was an error ${process.env.$API_KEY}`);
   });
 });
 
