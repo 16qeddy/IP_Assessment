@@ -11,10 +11,11 @@ script:
   - docker run -d 16qeddy/ip_assessment
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
-  access_key_id: ACCESS_KEY
+  access_key_id: $ACCESS_KEY
   secret_access_key:
-    secure: SECRET_ACCESS_KEY
+    secure: $SECRET_ACCESS_KEY
   region: "us-east-2"
   app: "ip_assessment"
   env: "ipassessment-env"
