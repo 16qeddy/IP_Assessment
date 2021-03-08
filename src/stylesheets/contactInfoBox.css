@@ -1,0 +1,38 @@
+/* .contactDataContainer{
+  align-items: center;
+  display: flex;
+  font-size: x-large;
+  flex-direction: column;
+  border-bottom: black 1px solid;
+  padding-bottom: 10px;
+  width: 100%;
+} */
+
+.contactDataContainer h4{
+  border-bottom: solid;
+}
+
+@media only screen and (min-width: 700px){
+  .contactDataContainer{
+    align-items: center;
+    display: flex;
+    font-size: x-large;
+    flex-direction: column;
+    border: none;
+    padding: 0px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .contactDataContainer{
+    align-items: center;
+    display: flex;
+    font-size: x-large;
+    flex-direction: column;
+    border-bottom: black 1px solid;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  
+}

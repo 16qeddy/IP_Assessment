@@ -1,0 +1,17 @@
+#app{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+
+.appContainer{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+}
+
+.simpleDirections{
+  margin-top: 20%;
+  align-self: center
+}

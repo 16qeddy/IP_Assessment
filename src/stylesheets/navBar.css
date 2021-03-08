@@ -1,0 +1,16 @@
+.navBar{
+  display: flex;
+  justify-content: center;
+}
+
+#searchBar{
+  height: 33px;
+  flex: 1;
+  max-width: 380px;
+  font-size: 18px;
+  border-width: medium;
+}
+
+.submitBtn{
+  margin-left: 6px;
+}

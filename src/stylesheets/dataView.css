@@ -1,0 +1,47 @@
+
+.dataViewContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.domainNameContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.domainNameLabel{
+  border-bottom: solid;
+  margin-bottom: 0px;
+}
+
+.domainName {
+  margin: 0px;
+}
+
+@media only screen and (min-width: 700px){
+  .contactInfoCard{
+    margin-top: 18px;
+    border: solid 1px;
+    padding: 16px;
+  }
+  .dataCard {
+    display: flex;
+    width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .contactInfoCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .dataCard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

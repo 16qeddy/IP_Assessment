@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import mapDomainData from '../helperFunctions/mapDomainData.js';
 import DataView from './dataView.js'
 import NavBar from './navBar.js';
+import '../stylesheets/app.css';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
        domainData: null,
-       query: '136.34.193.116',
+       query: '',
        error: false,
     };
     this.searchForDomain = this.searchForDomain.bind(this);
     this.searchBarOnChange = this.searchBarOnChange.bind(this);
     this.submitBtnOnClick = this.submitBtnOnClick.bind(this);
     this.searchBarOnKeyPress = this.searchBarOnKeyPress.bind(this);
-  }
-
-  componentDidMount(){
-    this.searchForDomain();
   }
 
   //updates the states query string as you type in the searchbar. TODO: add search on enter
@@ -35,6 +32,7 @@ export default class App extends Component {
     }
   }
 
+  //on click function for search button. resets search bar value.
   submitBtnOnClick(){
     this.searchForDomain();
     document.getElementById('searchBar').value = '';
@@ -54,12 +52,32 @@ export default class App extends Component {
   }
 
   render() {
-    if(!this.state.domainData){
-      return(null);
+    //catches errors or failed search results;
+    if (this.state.error){
+      return(
+        <div className="appContainer">
+        <NavBar placeHolder="Domain, IP or Email..." searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick} btnText="Search" onKeyPress={this.searchBarOnKeyPress}/>
+        <div className="simpleDirections">
+          I'm sorry, I cant seem to find that one :'( try searching for something else!
+        </div>
+      </div>
+      )
     }
+    //initial start up template directions (mostly for fun);
+    if(!this.state.domainData){
+      return(
+        <div className="appContainer">
+          <NavBar placeHolder="Domain, IP or Email..." searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick} btnText="Search" onKeyPress={this.searchBarOnKeyPress}/>
+          <div className="simpleDirections">
+            Try searching for an IP address, Domain, or Email! :)
+          </div>
+        </div>
+      );
+    } 
+    //renders data received form API;
     return (
       <div className="appContainer">
-        <NavBar placeHolder="Domain name, IP address, Email address" searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick} btnText="Search" onKeyPress={this.searchBarOnKeyPress}/>
+        <NavBar placeHolder="Domain, IP or Email..." searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick} btnText="Search" onKeyPress={this.searchBarOnKeyPress}/>
         <DataView domainData={this.state.domainData} searchBarOnChange={this.searchBarOnChange} submitBtnOnClick={this.submitBtnOnClick}/>
       </div>
     )
