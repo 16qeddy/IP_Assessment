@@ -3,11 +3,11 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -f dockerfile.dev -t 16qeddy/ip_assessment_test .
+# before_install:
+#   - docker build -f dockerfile.dev -t 16qeddy/ip_assessment_test .
 
-  script:
-    - docker run 16qeddy/ip_assessment_test .
+#   script:
+#     - docker run 16qeddy/ip_assessment_test .
 
 deploy:
   provider: elasticbeanstalk
