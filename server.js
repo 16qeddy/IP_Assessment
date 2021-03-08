@@ -21,7 +21,7 @@ app.get('/getdata/:domain', (req, res) =>{
   })
   .catch(err =>{
     console.log(err);
-    res.send(`there was an error ${process.env.API_KEY}`);
+    res.send(`there was an error: ${err}`);
   });
 });
 
