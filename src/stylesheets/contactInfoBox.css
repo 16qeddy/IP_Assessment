@@ -1,12 +1,3 @@
-/* .contactDataContainer{
-  align-items: center;
-  display: flex;
-  font-size: x-large;
-  flex-direction: column;
-  border-bottom: black 1px solid;
-  padding-bottom: 10px;
-  width: 100%;
-} */
 
 .contactDataContainer h4{
   border-bottom: solid;
@@ -21,18 +12,21 @@
     border: none;
     padding: 0px;
     width: 100%;
+    word-break: break-all;
+  }
+  .contactDataBox div{
+    padding: 8px;
   }
 }
 
 @media only screen and (max-width: 700px){
   .contactDataContainer{
-    align-items: center;
     display: flex;
     font-size: x-large;
     flex-direction: column;
     border-bottom: black 1px solid;
     padding-bottom: 10px;
     width: 100%;
+    word-break: break-all;
   }
-  
 }
