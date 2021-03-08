@@ -8,7 +8,7 @@ before_install:
   - docker build -f Dockerfile -t 16qeddy/ip_assessment .
 
 script:
-  - docker run 16qeddy/ip_assessment
+  - docker run -d 16qeddy/ip_assessment
 
 deploy:
   provider: elasticbeanstalk
