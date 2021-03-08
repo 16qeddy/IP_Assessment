@@ -1,0 +1,22 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -f dockerfile.dev -t 16qeddy/ip_assessment_test .
+
+  script:
+    - docker run 16qeddy/ip_assessment_test .
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+  secret_access_key:
+    secure:
+  region: "us-east-2"
+  app: "ip_assessment"
+  env: "ipassessment-env"
+  bucket_name: "theholygoatz"
+  on:
+    branch: CI/CD
